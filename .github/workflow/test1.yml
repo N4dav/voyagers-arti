@@ -1,0 +1,11 @@
+name: "JFrog test example"
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Deploy
+        run: curl -u ${{ secrets.JF_ACCESS_TOKEN }} -X PUT -T https://github.com/N4dav/voyagers-arti.git/first.txt ${{ secrets.JF_URL }}/artifactory/voyagers2nad-test/
