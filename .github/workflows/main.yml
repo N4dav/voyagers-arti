@@ -8,4 +8,4 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Deploy
-        run: curl -H "Authorization: Bearer ${{ secrets.JF_ACCESS_TOKEN }}" -X PUT -T first.txt ${{ secrets.JF_URL }}/artifactory/voyagers2nad-test/
+        run: curl -H "Authorization: Bearer ${{ secrets.JF_ACCESS_TOKEN }}" -X PUT -T first.txt https://${{ secrets.JF_URL }}/artifactory/voyagers2nad-test/
